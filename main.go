@@ -54,7 +54,7 @@ func loadConfig() []NpmScript {
 	packageJsonBytes, err := ioutil.ReadFile(configFilePath)
 
 	if err != nil {
-		log.Fatal("Error reading config file", err)
+		log.Fatal("Error reading package.json file\n", err)
 	}
 
 	packageJson := PackageJson{
