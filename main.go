@@ -47,7 +47,7 @@ func loadConfig() []NpmScript {
 
 	cwd, err := os.Getwd()
 	if err != nil {
-		log.Fatal("Error getting working directory path", err)
+		log.Fatal("Error getting working directory path\n", err)
 	}
 
 	configFilePath := path.Join(cwd, "package.json")
@@ -64,7 +64,7 @@ func loadConfig() []NpmScript {
 	err = json.Unmarshal(packageJsonBytes, &packageJson)
 
 	if err != nil {
-		log.Fatal("Error parsing package.json file", err)
+		log.Fatal("Error parsing package.json file\n", err)
 	}
 
 	for name, command := range packageJson.Scripts {
