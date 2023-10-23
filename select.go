@@ -62,8 +62,15 @@ func selectScript(scripts []NpmScript) (NpmScript, bool) {
 	items := []list.Item{}
 
 	for _, script := range scripts {
+		title := ""
+
+		if script.Description != "" {
+			title += "[" + script.Description + "] "
+		}
+
+		title += script.Name
 		items = append(items, item{
-			title:     script.Name,
+			title:     title,
 			desc:      script.Command,
 			npmScript: script,
 		})
